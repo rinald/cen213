@@ -1,4 +1,4 @@
-from util import N_simulations
+from util import test_reps
 import experiment
 import probability
 
@@ -24,12 +24,12 @@ if __name__ == '__main__':
     nbp = probability.negative_binomial
 
     # E(X) = 3*P(X<=7) + P(X=8) - 1
-    mean = 3*sum(nbp(r, p, i) for i in range(5, 8)) + nbp(r, p, 8) - 1
+    mean = A*sum(nbp(r, p, i) for i in range(r, 8)) + nbp(r, p, 8) - 1
 
     print(f'E(X) = {mean}')
     print()
 
-    for N in N_simulations:
+    for N in test_reps:
         print(f'For N = {N}')
         gambling_game(N)
         print()

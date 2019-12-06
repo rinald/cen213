@@ -1,4 +1,4 @@
-from util import N_simulations
+from util import test_reps
 import experiment
 import probability
 
@@ -25,10 +25,10 @@ if __name__ == '__main__':
     # E(X) = 4 - 3*P(X=1) - 2*P(X=2) - P(X=3)
     mean = b + sum((i-b)*gp(p, i) for i in range(1, b))
 
-    print(f'E(X) = {mean:.3f}')
+    print(f'E(X) = {mean:.5f}')
     print()
 
-    for N in N_simulations:
+    for N in test_reps:
         print(f'For N = {N}')
         sniper_simulation(N)
         print()

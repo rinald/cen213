@@ -1,9 +1,11 @@
-from util import bernoulli_trial, N_simulations
+from util import bernoulli_trial, test_reps
+
+# Simulate the random experiment of flipping
+# a coin until we get two heads in a row
 
 
-def coin_flip(N):
+def two_heads_simulation(N):
     p = 0.5
-
     flips = 0
 
     for _ in range(N):
@@ -19,11 +21,13 @@ def coin_flip(N):
 
         flips += x
 
-    print(f'E(X) = {flips/N}')
+    print(f'E(X) ~= {flips/N}')
 
 
 if __name__ == '__main__':
-    for N in N_simulations:
+    print('E(X) = 6')
+    print()
+    for N in test_reps:
         print(f'For N = {N}')
-        coin_flip(N)
+        two_heads_simulation(N)
         print()

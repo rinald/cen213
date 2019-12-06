@@ -1,4 +1,4 @@
-from util import N_simulations
+from util import test_reps
 import experiment
 import probability
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     print(f'E(X) = {mean}')
     print()
 
-    for N in N_simulations:
+    for N in test_reps:
         print(f'For N = {N}')
         gambling_game(N)
         print()

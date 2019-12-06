@@ -1,8 +1,15 @@
-from util import N_simulations
+from util import test_reps
 import experiment
 import probability
 
-test_cases = [(5, 0.5), (7, 0.3), (10, 0.2), (2, 0.1)]
+test_cases = [
+    (5, 0.5),
+    (5, 0.75),
+    (10, 0.25),
+    (10, 0.65),
+    (15, 0.15),
+    (15, 0.85)
+]
 
 
 def binomial_simulation(n, p, N):
@@ -23,7 +30,7 @@ if __name__ == '__main__':
             print(f'P(X = {x}) = {probability.binomial(n, p, x):.5f}')
         print()
 
-        for N in N_simulations:
+        for N in test_reps:
             print(f'For N = {N}')
             binomial_simulation(n, p, N)
             print()

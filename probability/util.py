@@ -1,7 +1,7 @@
 from math import factorial
 from random import random
 
-N_simulations = [10**i for i in range(3, 7)]
+test_reps = [10**i for i in range(3, 7)]
 
 
 def choose(n, k):
